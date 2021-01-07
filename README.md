@@ -36,12 +36,6 @@ To get started, follow these steps:
 Run the following commands in your terminal
 
     npm i
-    <!-- mysql -u root -p
-
-enter mysql password. When in mysql, enter the following commands
-
-    source schema.sql
-    exit -->
 
 ## Testing
 
