@@ -22,13 +22,15 @@ db.on("error", error => {
 
 // ROUTES to mirror API.js
 
-app.get("/", (req, res) => {
-    res.send(index.html);
-});
+// index.html get last workout GET /api/workouts
+
+// stats.html get workouts in range GET /api/workouts/range
+
+// exercise.html create workout POST /api/workouts
+
+// index.html add exercise(data) PUT /api/workouts/:id
 
 
-
-// Listen on port 3000
 app.listen(8080, () => {
     console.log("App running on port 8080!");
 });
