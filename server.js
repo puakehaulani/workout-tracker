@@ -1,7 +1,10 @@
 const express = require("express");
-const mongojs = require("mongojs");
 const logger = require("morgan");
+const mongoose = require("mongoose");
 
+const PORT = process.env.PORT || 8080;
+
+const User = require("./models");
 const app = express();
 
 app.use(logger("dev"));
@@ -11,14 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "workouttracker";
-const collections = ["workouts"];
-
-const db = mongojs(databaseUrl, collections);
-
-db.on("error", error => {
-    console.log("Database Error:", error);
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 // ROUTES to mirror API.js
 
@@ -30,7 +26,6 @@ db.on("error", error => {
 
 // index.html add exercise(data) PUT /api/workouts/:id
 
-
-app.listen(8080, () => {
-    console.log("App running on port 8080!");
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
 });
