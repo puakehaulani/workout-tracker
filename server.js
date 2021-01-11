@@ -14,17 +14,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+});
 
-// ROUTES to mirror API.js
-
-// index.html get last workout GET /api/workouts
-
-// stats.html get workouts in range GET /api/workouts/range
-
-// exercise.html create workout POST /api/workouts
-
-// index.html add exercise(data) PUT /api/workouts/:id
+app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
