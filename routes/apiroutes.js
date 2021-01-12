@@ -11,7 +11,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
-// router.post("/api/workout", ({ body }, res) => {
+// router.post("/api/workouts", ({ body }, res) => {
 //   Workout.create(body)
 //     .then(dbWorkout => {
 //       res.json(dbWorkout);
@@ -21,7 +21,7 @@ const Workout = require("../models/workout.js");
 //     });
 // });
 
-// router.post("/api/workout/bulk", ({ body }, res) => {
+// router.post("/api/workouts/bulk", ({ body }, res) => {
 //   Workout.insertMany(body)
 //     .then(dbWorkout => {
 //       res.json(dbWorkout);
@@ -31,15 +31,14 @@ const Workout = require("../models/workout.js");
 //     });
 // });
 
-// router.get("/api/workout", (req, res) => {
-//   Workout.find({})
-//     .sort({ date: -1 })
-//     .then(dbWorkout => {
-//       res.json(dbWorkout);
-//     })
-//     .catch(err => {
-//       res.status(400).json(err);
-//     });
-// });
+router.get("/api/workouts", (req, res) => {
+    Workout.find({})
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
 
 module.exports = router;
