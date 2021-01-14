@@ -1,10 +1,10 @@
 # Workout Tracker
 
-<!-- [![Demo](https://img.youtube.com/vi/GJfGbqx1-xU/0.jpg)](http://www.youtube.com/watch?v=GJfGbqx1-xU) -->
+[![Demo](https://img.youtube.com/vi/qFALY7wiOts/0.jpg)](http://www.youtube.com/watch?v=qFALY7wiOts)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Explore the docs]()
+[Explore the docs](https://github.com/puakehaulani/workout-tracker)
 
 ---
 
@@ -21,11 +21,17 @@
 
 ## About the Project
 
+Workout Tracker is an app to track workouts. It uses a NoSQL database to store user information about exercises they have done within a workout. The user can add to their last workout, start a new one, and see their recent stats. The dashboard page displays charts for total minutes of duration, weights lifted, and the exercises performed for the last seven days.
+
 ## Usage
 
-<!-- Run the following commands in your terminal
+Run the following commands in your terminal
 
-    node server.js -->
+    npm run start
+
+Navigate in the browser to
+
+    localhost:3000
 
 ## Getting Started
 
