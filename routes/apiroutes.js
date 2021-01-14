@@ -3,7 +3,16 @@ const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
 router.get("/api/workouts", (req, res) => {
-    Workout.find({})
+    Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: {
+                    $sum: ["$exercises.duration"]
+                }
+            }
+        }
+    ]
+    )
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -34,8 +43,18 @@ router.put("/api/workouts/:id", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
-        // NEED TO: add in parameters for the range //
+    Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: {
+                    $sum: ["$exercises.duration"]
+                }
+            }
+        }
+    ]
+    )
+        .limit(7)
+        .sort({ date: "descending" })
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
