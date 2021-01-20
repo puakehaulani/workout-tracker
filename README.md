@@ -4,7 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Explore the docs](https://github.com/puakehaulani/workout-tracker)
+[Explore the docs](https://github.com/puakehaulani/workout-tracker)  
+[See the deployed app](https://polar-coast-38465.herokuapp.com/)
 
 ---
 
